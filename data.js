@@ -139,13 +139,13 @@ window.PortfolioData = {
     },
     {
       id: 7,
-      title: "費曼教學法 AI 機器人",
-      thumbnail: "./resources/feynman_bot_cover.png",
+      title: "Tabula：費曼 AI 學伴",
+      thumbnail: "./resources/Tabula UI.png",
       url: "https://cheery-malabi-756027.netlify.app/",
       buttonText: "開始對話",
       icon: "message-square",
       tag: "AI 助教",
-      description: "基於費曼教學法（Feynman Technique）開發的 AI 助教。它會扮演「什麼都不懂的初學者」，透過引導式提問帶領你用最直白的語言解釋觀念，達成真正的理解。"
+      description: "「Tabula」取名自拉丁文「白板」，是一張白紙般的「費曼 AI 學伴」。基於「以教為學」理論，讓學習者透過「教導」它來內化知識。適合想深度學習、突破瓶頸的你，快來當 Tabula 的老師，陪它一起成長吧！"
     }
   ],
 
@@ -248,28 +248,66 @@ window.PortfolioData = {
 
   // 7. 首頁精選專案 (Featured Project)
   featuredProject: {
-    imageUrl: "./resources/三隻小豬遊戲照片.jpg",
+    imageUrl: "./resources/Tabula UI.png",
     title: {
-      zh: "遊戲化教學實踐：三隻小豬差異化解謎",
-      en: "Gamified Differentiated Instruction: Three Little Pigs Puzzle"
+      zh: "Tabula：費曼 AI 學伴",
+      en: "Tabula: Your Feynman Study Buddy"
     },
     description: {
-      zh: "這是我將「差異化教學」與「遊戲化」結合的實踐案例。不同程度的孩子會拿到不同的「機密文件」，他們無法靠自己單打獨鬥過關，必須互相溝通、合作，拼湊各自的線索才能解決問題。這不僅解決了學習動機的痛點，更是在課堂中打造了真實的社會化鷹架（Social Scaffolding）。",
-      en: "A practical case combining 'Differentiated Instruction' and 'Gamification'. Students of different levels receive different 'secret documents'. They cannot pass the level alone; they are forced to communicate, cooperate, and piece together their clues to solve the problem. This not only addresses the pain point of learning motivation but also builds real social scaffolding in the classroom."
+      zh: "取名自拉丁文「白板」，Tabula 扮演一張白紙般的數位學生。基於費曼教學法（Feynman Technique）的核心理論，Tabula 不給予答案，而是透過具備好奇心的連環問題，引導你將複雜知識轉化為最直白的語言，從中找出理解盲點。\n\n這套系統採用獨特的手繪介面，營造無壓力的學習環境。目前已累積超過百人次的深度實測，Tabula 很想向你學習！快來教教 Tabula 吧！",
+      en: "Named after the Latin word for 'blank slate', Tabula is a digital student who knows nothing—yet. Built on the Feynman Technique, Tabula never gives you answers. Instead, it asks relentlessly curious questions, guiding you to translate complex knowledge into plain language and uncover the true gaps in your understanding.\n\nPowered by a unique hand-drawn interface that creates a stress-free learning environment. With over 100 deep interactions logged, Tabula is eager to learn from you. Come teach Tabula something!"
     },
-    documents: [
-      { 
-        name: { zh: "機密文件A:文法大總統", en: "Secret Document A: Grammar President" }, 
-        url: "./resources/機密文件A_文法大總統.pdf" 
-      },
-      { 
-        name: { zh: "機密文件Ｂ：單字特務", en: "Secret Document B: Vocab Agent" }, 
-        url: "./resources/機密文件B_單字特務.pdf" 
-      }
-    ]
+    link: {
+      url: "https://cheery-malabi-756027.netlify.app/",
+      label: { zh: "立即體驗", en: "Try It Now" }
+    }
   },
 
-  // 8. 遊戲化教學理念 (Gamification Philosophy)
+  // 8. 服務項目 (Services)
+  services: [
+    {
+      id: 1,
+      icon: "user",
+      title: { zh: "私人家教", en: "1-on-1 Tutoring" },
+      target: { zh: "學生・家長", en: "Students・Parents" },
+      description: {
+        zh: "針對學生個別需求量身訂製學習計畫，以精準診斷取代填鴨，讓每堂課都切中要害。",
+        en: "Bespoke learning plans tailored to each student's needs. Precision diagnosis over rote drilling—every session hits the mark."
+      }
+    },
+    {
+      id: 2,
+      icon: "monitor",
+      title: { zh: "線上課程", en: "Online Courses" },
+      target: { zh: "自學者・在校生", en: "Self-learners・Students" },
+      description: {
+        zh: "突破地域限制，透過精心設計的數位互動讓學習隨時發生，維持高度參與感。",
+        en: "Break geographical barriers. Carefully designed digital interactions keep learners deeply engaged, anytime and anywhere."
+      }
+    },
+    {
+      id: 3,
+      icon: "book-open",
+      title: { zh: "教材設計", en: "Material Design" },
+      target: { zh: "教師・教育機構", en: "Teachers・Institutions" },
+      description: {
+        zh: "將遊戲化機制、差異化教學與多模態敘事融入教材，讓內容本身就能驅動學習動機。",
+        en: "Gamification, differentiated instruction, and multimodal narratives woven into materials—content that drives motivation by itself."
+      }
+    },
+    {
+      id: 4,
+      icon: "layout",
+      title: { zh: "課程設計", en: "Curriculum Design" },
+      target: { zh: "學校・補習班・企業", en: "Schools・Cram Schools・Enterprises" },
+      description: {
+        zh: "從目標分析到評量回饋，以 LXD 邏輯打造完整的學習旅程，確保每個教學環節精準到位。",
+        en: "From learning objectives to assessment feedback, full-journey curriculum built on LXD logic—every instructional link precisely calibrated."
+      }
+    }
+  ],
+
+  // 9. 遊戲化教學理念 (Gamification Philosophy)
   gamificationPhilosophy: {
     title: {
       zh: "遊戲化教學：將心理學注入學習基因",
