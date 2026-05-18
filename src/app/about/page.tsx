@@ -24,7 +24,7 @@ export default function About() {
         />
       </div>
       <div className="flex-1">
-        <h1 className="text-4xl font-extrabold text-gray-900 mb-2 tracking-tight">
+        <h1 className="text-4xl font-extrabold text-gray-900 mb-2 tracking-tight whitespace-pre-line">
           {about.name}
         </h1>
         <h2 className="text-xl text-gray-500 font-medium mb-8 pb-4 border-b border-gray-100">
