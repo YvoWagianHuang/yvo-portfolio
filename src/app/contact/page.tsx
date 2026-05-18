@@ -10,30 +10,36 @@ export default function Contact() {
   const lang = i18n.language as "zh" | "en";
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus("submitting");
     const form = e.currentTarget;
-    const data = new FormData(form);
+    const formData = new FormData(form);
 
-    try {
-      const response = await fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
-        method: "POST",
-        body: data,
-        headers: {
-          Accept: "application/json",
-        },
-      });
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const subject = formData.get("subject") as string;
+    const message = formData.get("message") as string;
 
-      if (response.ok) {
-        setStatus("success");
-        form.reset();
-      } else {
-        setStatus("error");
-      }
-    } catch (error) {
-      setStatus("error");
-    }
+    const subjectMap: Record<string, string> = {
+      course: lang === "zh" ? "預約課程 (私人家教/線上課程)" : "Course Booking",
+      speak: lang === "zh" ? "演講邀約" : "Speaking Engagement",
+      material: lang === "zh" ? "教材設計合作" : "Material Design Collaboration",
+      other: lang === "zh" ? "其他事項" : "Other",
+    };
+
+    const mailSubject = encodeURIComponent(`[${subjectMap[subject] || subject}] 來自 ${name} 的聯絡訊息`);
+    const mailBody = encodeURIComponent(
+      `姓名 / Name: ${name}\n信箱 / Email: ${email}\n\n訊息內容 / Message:\n${message}`
+    );
+
+    window.location.href = `mailto:yvo.wagian.huang@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+    
+    // Show success state briefly
+    setStatus("success");
+    form.reset();
+    setTimeout(() => {
+      setStatus("idle");
+    }, 5000);
   };
 
   return (
