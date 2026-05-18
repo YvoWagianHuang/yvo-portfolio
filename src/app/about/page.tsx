@@ -35,6 +35,25 @@ export default function About() {
             <p key={index}>{paragraph}</p>
           ))}
         </div>
+        
+        {/* Brand Manifesto Section */}
+        <div className="mt-12 bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+            <span className="bg-blue-600 text-white p-1.5 rounded-lg mr-3 shadow-sm">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </span>
+            {lang === "zh" ? "伊理教育：顛覆傳統的邀請" : "Yili Education: An Invitation to Disrupt Tradition"}
+          </h3>
+          <div className="prose prose-gray text-gray-700 leading-relaxed space-y-4">
+            {(typeof about.manifesto === "string" ? about.manifesto : about.manifesto?.[lang] || about.manifesto?.zh)?.split("\n").map((line, index) => (
+              <p key={index} className={line.match(/^\d+\./) ? "pl-4 font-medium" : ""}>
+                {line}
+              </p>
+            ))}
+          </div>
+        </div>
 
         <div className="mt-12 pt-8 border-t border-gray-100">
           <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-6">
