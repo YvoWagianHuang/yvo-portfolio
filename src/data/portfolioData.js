@@ -52,8 +52,8 @@ export const portfolioData = {
       title: "活動紀錄：台北升學博覽展",
       date: "2026-05-07",
       excerpt: "今年三月，Yvo受邀協辦台北升學博覽展，向家長分享麗山高中的豐富課綱與國際交流經驗。在那段研究 GANs 與音樂夢想並行的青春歲月中，所學的一切都成了今日推動教育科技的養分。",
-      content: "今年三月，Yvo受高中母校台北市麗山高中邀請，協辦台北升學博覽展。\n升學博覽會是由台北市政府主辦在世界貿易中心的年度活動，台北市的高中職會擺設攤位，向家長公開宣傳學校的辦學理念與特色。\n\n<img src=\"/blog_pdfs/parenting_world.jpeg\" class=\"w-full h-auto rounded-2xl shadow-lg my-8\" alt=\"親子天下\" />\n\n展覽期間，Yvo向數十名家長一一說明麗山高中豐富的校本課綱與專題研究的內容，並分享自己曾經參加科教館青少年科學家培育計劃的國際科展經驗，以及代表麗山高中到馬來西亞交換的國際交流履歷。Yvo施展了自己對教育長時間累積的素養與洞見，全面地向家長分析文理組的學術進路，為焦慮與迷茫的考生和家長指引道路。\n\n在此同時，有些家長驚訝地發現電視上播放的新聞影片採訪主角，正是眼前的Yvo!\n那是年輕的Yvo接受大愛電視台的專訪紀錄，在１０８課綱與麗山的培育下，高中時代的Yvo如何兼顧音樂夢想以及學術研究的青春歲月。\n\n「我清楚記得那段十幾歲的日子是難熬的，經常睡不好，在台大電機系、師大生物系和麗山實驗室奔波、學習，在沒有LLM的時代研究生成對抗網路(GANs)在演化生物學的應用，而當時所學的一切經過多年，都變成了今天的養分。」當許多家長好奇Yvo的高中經歷時，Yvo大多這樣回應\n\n<img src=\"./blog_pdfs/IMG_1442_Original.jpg\" class=\"w-full h-auto rounded-2xl shadow-lg my-8\" alt=\"工作過程\" />\n\n除了為自己的學校發生外，Yvo在這場展覽中，也與內湖高工、復興高中、康寧大學等學術機構的校長、主任建立連結。Yvo深入地了解現場老師，學生和家長的需求，提醒自己的教育科技專業，是為了這些人而服務的，而Yvo也會繼續致力於此：讓所有人都愛上學習。\n\n新聞連結：\n- [升學博覽會北市新聞稿 (1)](https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&s=4EBC58CEC7E34085)\n- [升學博覽會北市新聞稿 (2)](https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=D1492FC5FF2F8D11)\n- [親子天下報導文章](https://premium.parenting.com.tw/article/5086448)\n\n---\n\n**Event Record: Taipei Higher Education Fair**\n\nThis March, Yvo was invited by his alma mater, Taipei Municipal Lishan High School, to co-organize the Taipei Higher Education Fair.\nThe Higher Education Fair is an annual event hosted by the Taipei City Government at the World Trade Center, where high schools in Taipei set up booths to publicly promote their educational philosophies and characteristics to parents.\n\n<img src=\"/blog_pdfs/parenting_world.jpeg\" class=\"w-full h-auto rounded-2xl shadow-lg my-8\" alt=\"Parenting World Feature\" />\n\nDuring the exhibition, Yvo explained Lishan High School's rich school-based curriculum and project-based research to dozens of parents. He also shared his international science fair experience in the Science Education Center's Young Scientist Nurturing Program and his international exchange portfolio representing Lishan High School in Malaysia. Applying his long-accumulated educational insights, Yvo comprehensively analyzed the academic paths for humanities and sciences, guiding anxious and confused students and parents.\n\nAt the same time, some parents were surprised to find that the protagonist in the news interview video playing on TV was Yvo right in front of them!\nIt was a documentary interview of a younger Yvo by Da Ai TV, recording how Yvo balanced his music dreams and academic research during his high school years under the 108 Curriculum and Lishan's nurturing.\n\n\"I clearly remember those teenage days were tough. I often didn't sleep well, running between NTU Electrical Engineering, NTNU Biology, and Lishan labs to learn and study the application of Generative Adversarial Networks (GANs) in evolutionary biology in an era without LLMs. Everything I learned then has become the nutrients for today after many years.\" This is how Yvo responded when parents were curious about his high school experience.\n\n<img src=\"./blog_pdfs/IMG_1442_Original.jpg\" class=\"w-full h-auto rounded-2xl shadow-lg my-8\" alt=\"Working Process\" />\n\nIn addition to speaking for his own school, Yvo also built connections with principals and directors from academic institutions such as Neihu Vocational High School, Fuxing High School, and Kang Ning University. Deeply understanding the needs of frontline teachers, students, and parents, Yvo reminded himself that his educational technology expertise is meant to serve these people. Yvo will continue to dedicate himself to this: letting everyone love learning.\n\nNews Links:\n- [Taipei City Government Press Release (1)](https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&s=4EBC58CEC7E34085)\n- [Taipei City Government Press Release (2)](https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=D1492FC5FF2F8D11)\n- [Parenting Magazine Feature](https://premium.parenting.com.tw/article/5086448)",
-      imageUrl: "./blog_pdfs/IMG_1339_Original 2.jpg"
+      content: "今年三月，Yvo受高中母校台北市麗山高中邀請，協辦台北升學博覽展。\n升學博覽會是由台北市政府主辦在世界貿易中心的年度活動，台北市的高中職會擺設攤位，向家長公開宣傳學校的辦學理念與特色。\n\n<img src=\"/blog_pdfs/parenting_world.jpeg\" class=\"w-full h-auto rounded-2xl shadow-lg my-8\" alt=\"親子天下\" />\n\n展覽期間，Yvo向數十名家長一一說明麗山高中豐富的校本課綱與專題研究的內容，並分享自己曾經參加科教館青少年科學家培育計劃的國際科展經驗，以及代表麗山高中到馬來西亞交換的國際交流履歷。Yvo施展了自己對教育長時間累積的素養與洞見，全面地向家長分析文理組的學術進路，為焦慮與迷茫的考生和家長指引道路。\n\n在此同時，有些家長驚訝地發現電視上播放的新聞影片採訪主角，正是眼前的Yvo!\n那是年輕的Yvo接受大愛電視台的專訪紀錄，在１０８課綱與麗山的培育下，高中時代的Yvo如何兼顧音樂夢想以及學術研究的青春歲月。\n\n「我清楚記得那段十幾歲的日子是難熬的，經常睡不好，在台大電機系、師大生物系和麗山實驗室奔波、學習，在沒有LLM的時代研究生成對抗網路(GANs)在演化生物學的應用，而當時所學的一切經過多年，都變成了今天的養分。」當許多家長好奇Yvo的高中經歷時，Yvo大多這樣回應\n\n<img src=\"/blog_pdfs/IMG_1442_Original.jpg\" class=\"w-full h-auto rounded-2xl shadow-lg my-8\" alt=\"工作過程\" />\n\n除了為自己的學校發生外，Yvo在這場展覽中，也與內湖高工、復興高中、康寧大學等學術機構的校長、主任建立連結。Yvo深入地了解現場老師，學生和家長的需求，提醒自己的教育科技專業，是為了這些人而服務的，而Yvo也會繼續致力於此：讓所有人都愛上學習。\n\n新聞連結：\n- [升學博覽會北市新聞稿 (1)](https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&s=4EBC58CEC7E34085)\n- [升學博覽會北市新聞稿 (2)](https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=D1492FC5FF2F8D11)\n- [親子天下報導文章](https://premium.parenting.com.tw/article/5086448)\n\n---\n\n**Event Record: Taipei Higher Education Fair**\n\nThis March, Yvo was invited by his alma mater, Taipei Municipal Lishan High School, to co-organize the Taipei Higher Education Fair.\nThe Higher Education Fair is an annual event hosted by the Taipei City Government at the World Trade Center, where high schools in Taipei set up booths to publicly promote their educational philosophies and characteristics to parents.\n\n<img src=\"/blog_pdfs/parenting_world.jpeg\" class=\"w-full h-auto rounded-2xl shadow-lg my-8\" alt=\"Parenting World Feature\" />\n\nDuring the exhibition, Yvo explained Lishan High School's rich school-based curriculum and project-based research to dozens of parents. He also shared his international science fair experience in the Science Education Center's Young Scientist Nurturing Program and his international exchange portfolio representing Lishan High School in Malaysia. Applying his long-accumulated educational insights, Yvo comprehensively analyzed the academic paths for humanities and sciences, guiding anxious and confused students and parents.\n\nAt the same time, some parents were surprised to find that the protagonist in the news interview video playing on TV was Yvo right in front of them!\nIt was a documentary interview of a younger Yvo by Da Ai TV, recording how Yvo balanced his music dreams and academic research during his high school years under the 108 Curriculum and Lishan's nurturing.\n\n\"I clearly remember those teenage days were tough. I often didn't sleep well, running between NTU Electrical Engineering, NTNU Biology, and Lishan labs to learn and study the application of Generative Adversarial Networks (GANs) in evolutionary biology in an era without LLMs. Everything I learned then has become the nutrients for today after many years.\" This is how Yvo responded when parents were curious about his high school experience.\n\n<img src=\"/blog_pdfs/IMG_1442_Original.jpg\" class=\"w-full h-auto rounded-2xl shadow-lg my-8\" alt=\"Working Process\" />\n\nIn addition to speaking for his own school, Yvo also built connections with principals and directors from academic institutions such as Neihu Vocational High School, Fuxing High School, and Kang Ning University. Deeply understanding the needs of frontline teachers, students, and parents, Yvo reminded himself that his educational technology expertise is meant to serve these people. Yvo will continue to dedicate himself to this: letting everyone love learning.\n\nNews Links:\n- [Taipei City Government Press Release (1)](https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&s=4EBC58CEC7E34085)\n- [Taipei City Government Press Release (2)](https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=D1492FC5FF2F8D11)\n- [Parenting Magazine Feature](https://premium.parenting.com.tw/article/5086448)",
+      imageUrl: "/blog_pdfs/IMG_1339_Original 2.jpg"
     },
     {
       id: 7,
@@ -77,7 +77,7 @@ export const portfolioData = {
       date: "2026-05-03",
       excerpt: "在開發 AI 助教時，我正面撞上了隱形的「語言稅」。如果未來教育由 AI 驅動，不擅長英文的孩子是否註定落後？我帶著疑問與 UC Berkeley 教授展開了一場深度對話...",
       content: "最近在 WISE 平台開發 AI 助教時，我正面撞上了一個隱形的障礙。\n\n我的目標是讓助教能引導學生自主思考，而非直接給答案。但在實測中，我清楚看見了那份「隱形的語言稅」：同樣的邏輯，模型用英文對答如流，換成中文卻像變了個人。這是因為主流 LLM 的訓練資料仍以英文為主。我不禁焦慮：如果未來的教育由 AI 驅動，那不擅長英文的孩子，是否註定會被甩在後頭？\n\n帶著這個疑問，我在台師大的講座後，找上了 WISE 平台創始人、柏克萊大學教授 Hiroki Terashima。\n\n【多樣性設計：偏見的隱身斗篷】\n\n我直言不諱地詢問 Hiroki：這種數據驅動的語言鴻溝，是否會讓教育資源更加不平等？\n\n他的回答讓我當頭棒喝。他沒談演算法，而是談「人」。他說：「多樣性設計（Diversity in Design）不是選項，而是必然。」\n\n他解釋道，如果開發團隊背景單一，AI 的偏見就會像穿了「隱身斗篷」，消失在開發者的視線裡。唯有引入不同文化、不同母語的「守門人」，我們才能在模型傷害特定族群前，精準地揪出錯誤。在那場高層次的對話中，我感受到大腦全速運轉的「心流」，那是我對 EdTech 最純粹的熱愛。\n\n【從硬體到系統：做時代的領頭羊】\n\n令人驚喜的是，講座散場時，Hiroki 竟在人流中主動找到了我，交換聯絡方式並希望我持續分享見解。\n\n從他身上我看到，EdTech 專家的價值不只是調校模型，而是讓科技具備「同理心」。當代的教育科技已從「電子白板」的硬體層面，跨越到 AI 系統的架構面。我會繼續當那個敢於挑戰演算法的人，確保科技的進步是為了翻轉階級，而非加深鴻溝。\n\n---\n\n**Beyond the Algorithm: A Dialogue on AI Equity with Hiroki Terashima**\n\n[The \"Language Tax\" Anxiety]\n\nWhile developing an AI teaching assistant on the WISE platform, I encountered an invisible barrier.\n\nMy goal was to create an AI that guides students toward inquiry rather than just providing answers. However, I observed a recurring \"Linguistic Tax\": models that are articulate and logical in English often lose their nuance in Chinese. This data bias, rooted in English-centric training sets, keeps me up at night: If the future of education is AI-driven, are non-native English speakers destined to be left behind?\n\nI took this concern to Professor Hiroki Terashima (UC Berkeley), the founder of WISE, during his session at NTNU.\n\n[Diversity as a \"Safety Feature\"]\n\nI asked Hiroki point-blank: Will this data-driven linguistic gap exacerbate educational inequality?\n\nHis response shifted my perspective entirely. He didn't talk about code; he talked about humanity. \"Diversity in Design is not a choice; it is a necessity,\" stated.\n\nHe explained that in a homogenous team, bias acts like an \"invisibility cloak,\" undetected by those within the bubble. We need \"gatekeepers\" from diverse linguistic and cultural backgrounds to detect failures before they harm learners. Engaging in such a high-level exchange put me in a state of \"flow\"—a moment where my passion for EdTech felt more vivid than ever.\n\n[The Future: Empathy-Driven Systems]\n\nTo my surprise, as the session ended, Hiroki sought me out in the crowd to exchange contact information, eager to hear more about my insights.\n\nHiroki embodies the true value of an EdTech expert: it’s not just about building \"smarter\" models, but building \"empathetic\" systems. Modern EdTech has evolved from hardware like smartboards into complex AI ecosystems. I am committed to being the one who challenges the algorithm—not just as a developer, but as a pioneer ensuring that technology serves as a bridge, not a wall, for every learner.",
-      imageUrl: "./blog_pdfs/Hiroki.jpg"
+      imageUrl: "/blog_pdfs/Hiroki.jpg"
     },
     {
       id: 4,
@@ -85,7 +85,7 @@ export const portfolioData = {
       date: "2026-05-02",
       excerpt: "我們該如何設計教育工具，來促進真實的跨文化交流？這是一場在工程學與文化人類學的有趣交會中畫下句點的實踐。",
       content: "我們該如何設計教育工具，來促進真實的跨文化交流？在本週的 ERG 交流會中，我們非常榮幸地邀請到來自芬蘭的軟體工程師 Otto 先生。\n\n為了克服潛在的語言障礙並降低「情感濾網（affective filter）」，我開發了一款客製化的 HTML 互動工具，靈感來自日本的「花牌（Karuta）」與記憶配對遊戲機制。這套「遊戲化鷹架」成功地引導了我們的對話，讓我們能夠流暢地探討複雜的社會文化現象——從芬蘭的桑拿文化與數位工具的應用，一路比較到台灣的職場生態與社會中的委婉表達習慣。\n\n活動中的一大亮點，是我們地理系背景的 Udella 全程使用英文進行簡報，精采地向 Otto 介紹了台灣的地形與民間信仰如何影響基礎建設——這是一次完美的跨學科「現象式學習（Phenomenon-based Learning）」的展現！\n\n這場交流最終在工程學與文化人類學的有趣交會中畫下句點：我們送給 Otto 一包台灣獨有的科技護身符「乖乖」，保佑他的硬體設備運作順暢！這次的活動再次印證了，教育科技（EdTech）真正的教學可供性（pedagogical affordance），在於搭建起人類經驗交流的橋樑。\n\n---\n\n**[Original English Post]**\n\n🇫🇮 Cross-Cultural Scaffolding: Gamifying the Finnish-Taiwanese Dialogue\n\nHow do we design educational tools to facilitate authentic, cross-cultural discourse? In this week’s ERG session, we had the privilege of hosting Mr. Otto, a software engineer from Finland.\n\nTo overcome potential language barriers and lower the affective filter, I developed a custom HTML-based interactive tool inspired by Japanese Karuta (花牌) and memory-matching mechanics. This \"Gamified Scaffolding\" successfully guided our dialogue, allowing us to seamlessly navigate complex socio-cultural phenomenons—comparing Finnish sauna norms and digital tool adoption with Taiwan's workplace dynamics and social indirectness.\n\nA major highlight was our Geography major, Udella, delivering a full-English presentation on how Taiwan’s topology and folk customs shape its infrastructure—a brilliant demonstration of interdisciplinary Phenomenon-based Learning. We concluded the session at the intersection of engineering and cultural anthropology: gifting Otto a pack of \"Kuai Kuai\" (乖乖), Taiwan’s unique tech-talisman for keeping hardware running smoothly! This session reaffirmed that EdTech’s true pedagogical affordance lies in bridging human experiences.",
-      imageUrl: "./blog_pdfs/cross_cultural_scaffolding.jpg"
+      imageUrl: "/blog_pdfs/cross_cultural_scaffolding.jpg"
     },
     {
       id: 1,
@@ -94,7 +94,7 @@ export const portfolioData = {
       excerpt: "現代教育何嘗不是另一種篩子？透過標準化的考試與分發，我們精確地將學生分成三六九等。在少子化的時代，「合作」才是教育該超前部署的生存技術。",
       content: "「時代就像是一個篩子，篩得人顛沛流離。」這是王鼎鈞在《碎琉璃》中留下的名句，也是台灣國文課堂的經典篇章。\n\n但我常在想，現代教育何嘗不是另一種篩子？透過標準化的考試與分發，我們精確地將學生分成三六九等。這種「工廠化生產」的邏輯——追求良率、剔除不良品、迷信升學率——正是教育批判學者眼中的隱憂。\n\n在師大修習教育學程期間，我曾深深著迷於這些反思。在我的期中申論中，我提出了核心論點：在少子化的時代，「合作」才是教育該超前部署的生存技術。\n\n### 1. 從「存量競爭」轉向「增量價值」\n\n農業時代的教育邏輯是「資源搶奪」，因為資源有限，所以必須崇尚競爭。但現代台灣教育資源已趨於過剩，真正的危機不再是「進不去學校」，而是「進去後失去了靈魂」。我們仍保留著工業時代的篩選殘餘，卻忽視了在資源充足的現代，如何透過協作來創造「1+1>2」的品質躍遷。\n\n### 2. 學校應是「社會化鷹架」，而非「孤獨賽場」\n\n少子化讓許多孩子成了「孤島上的公主與王子」。在家庭中，他們享有優渥資源卻缺乏與手足分工、分享、甚至衝突後和解的經驗。學校，作為孩子難得聚集的場域，不應只是另一個埋頭刷題的競技場，而應成為一個具備「社會化鷹架（Social Scaffolding）」的功能體。我們該教的，是孩子如何直視他人的眼睛，和諧地在分歧中找到共識。\n\n### 3. 專案協作：未來 30 年的「職場硬實力」\n\n放眼未來，單打獨鬥的英雄時代已經過去。無論是跨國專案還是 AI 協作，這並非單純的「社交」，而是一種涉及專案管理、情緒韌性與團隊動能的「戰略素養」。在伊理教育的教材設計中，「合作」從來不是隨機分配，而是導入差異化教學（Differentiated Instruction）：\n\n我們不把任務推給「能者多勞」的強者，而是透過設計，讓不同程度的學生在團隊中都能找到自己的「Zone of Proximal Development (ZPD)」，讓每一位學生都能在特定時刻，成為帶領團隊的英雄。\n\n就像美國海豹部隊的精神：「隨時準備領導他人，隨時準備被領導。」\n\n你的孩子具備這樣的精神嗎？面對充滿不確定的 2026 甚至 2050 年，競爭固然重要，但「合作」絕對是未來 30 年最關鍵的生存課題。",
       imageUrl: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80",
-      pdfUrl: "./blog_pdfs/從篩子到鷹架.pdf"
+      pdfUrl: "/blog_pdfs/從篩子到鷹架.pdf"
     }
   ],
 
@@ -104,29 +104,29 @@ export const portfolioData = {
     {
       id: 2,
       title: "思考鏈：由思緒連結文字",
-      thumbnail: "./resources/chain_of_thought_cover.png",
-      pdfUrl: "./resources/思考鏈：由思緒連結文字.pdf",
+      thumbnail: "/resources/chain_of_thought_cover.png",
+      pdfUrl: "/resources/思考鏈：由思緒連結文字.pdf",
       description: "這是我專為高中生設計的作文教材，引導學生運用「思考鏈」的邏輯架構，將零散的思緒精準地轉化為結構清晰、具備說服力的文字。"
     },
     {
       id: 3,
       title: "英語辯論遊戲化教材",
       thumbnail: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=300&q=80",
-      pdfUrl: "./resources/英語辯論遊戲化教材.pdf",
+      pdfUrl: "/resources/英語辯論遊戲化教材.pdf",
       description: "將 RPG 機制引入英語課堂，解決小學生學習動機痛點的代表作。"
     },
     {
       id: 4,
       title: "梅西英語數位教材",
       thumbnail: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=300&q=80",
-      pdfUrl: "./resources/梅西英語數位教材.pdf",
+      pdfUrl: "/resources/梅西英語數位教材.pdf",
       description: "結合媒體素養與體育敘事的數位教學方案，讓學生可以在國際學校中以英文表達完整想法。"
     },
     {
       id: 5,
       title: "三隻小豬倒數計時器",
       thumbnail: "https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&w=300&q=80",
-      url: "./resources/三隻小豬倒數計時器.html",
+      url: "/resources/三隻小豬倒數計時器.html",
       buttonText: "體驗工具",
       icon: "external-link",
       tag: "HTML 工具",
@@ -136,13 +136,13 @@ export const portfolioData = {
       id: 6,
       title: "學術英文寫作入門：A Guide to SAQ",
       thumbnail: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=300&q=80",
-      pdfUrl: "./resources/學術英文寫作入門_A_Guide_to_SAQ.pdf",
+      pdfUrl: "/resources/學術英文寫作入門_A_Guide_to_SAQ.pdf",
       description: "這是我專為大學生設計的學術英文寫作入門教材。針對常見的簡答申論題 (Short Answer Questions) 提供系統化的寫作框架，幫助學生快速建立專業的學術表達能力。"
     },
     {
       id: 7,
       title: "Tabula：費曼 AI 學伴",
-      thumbnail: "./resources/Tabula UI.png",
+      thumbnail: "/resources/Tabula UI.png",
       url: "https://cheery-malabi-756027.netlify.app/",
       buttonText: "開始對話",
       icon: "message-square",
@@ -254,7 +254,7 @@ export const portfolioData = {
 
   // 7. 首頁精選專案 (Featured Project)
   featuredProject: {
-    imageUrl: "./resources/Tabula UI.png",
+    imageUrl: "/resources/Tabula UI.png",
     title: {
       zh: "Tabula：費曼 AI 學伴",
       en: "Tabula: Your Feynman Study Buddy"
