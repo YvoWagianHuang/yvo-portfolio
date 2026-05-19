@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { portfolioData } from "@/data/portfolioData";
 import { Gamepad2, Bell, MessageSquare, Briefcase, ArrowRight } from "lucide-react";
 import type { BlogPost } from "@/lib/blog";
+import { motion } from "framer-motion";
 
 export default function HomeClient({ posts }: { posts: BlogPost[] }) {
   const { t, i18n } = useTranslation();
@@ -16,15 +17,26 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
   return (
     <div className="space-y-20 py-8">
       {/* Hero Section */}
-      <section className="text-center py-16">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-center py-16"
+      >
         <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
           {t("home.title")}
         </h1>
-      </section>
+      </motion.section>
 
       {/* Featured Announcement */}
       {featuredAnnouncement && (
-        <section className="max-w-4xl mx-auto">
+        <motion.section 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-4xl mx-auto"
+        >
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden group hover:shadow-xl transition-shadow duration-300">
             <div className="h-64 sm:h-80 w-full overflow-hidden relative">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -49,12 +61,18 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
               </p>
             </div>
           </div>
-        </section>
+        </motion.section>
       )}
 
       {/* Gamification Philosophy */}
       {gamificationPhilosophy && (
-        <section className="max-w-4xl mx-auto px-4 text-center">
+        <motion.section 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-4xl mx-auto px-4 text-center"
+        >
           <div className="inline-flex items-center justify-center p-3 bg-purple-100 rounded-2xl mb-6">
             <Gamepad2 className="w-8 h-8 text-purple-600" />
           </div>
@@ -64,12 +82,18 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
           <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
             {gamificationPhilosophy.description[lang] || gamificationPhilosophy.description.zh}
           </p>
-        </section>
+        </motion.section>
       )}
 
       {/* Featured Project */}
       {featuredProject && (
-        <section className="max-w-5xl mx-auto">
+        <motion.section 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-5xl mx-auto"
+        >
           <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row items-center gap-8 p-8 md:p-12">
             <div className="w-full md:w-1/2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -103,11 +127,17 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
               )}
             </div>
           </div>
-        </section>
+        </motion.section>
       )}
 
       {/* Announcements */}
-      <section className="max-w-4xl mx-auto">
+      <motion.section 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="max-w-4xl mx-auto"
+      >
         <h2 className="text-2xl font-bold mb-8 text-gray-900 flex items-center">
           <Bell className="w-6 h-6 mr-3 text-blue-500" />
           {t("home.announcements")}
@@ -129,10 +159,16 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
             </div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Testimonials */}
-      <section className="max-w-6xl mx-auto">
+      <motion.section 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="max-w-6xl mx-auto"
+      >
         <h2 className="text-2xl font-bold mb-8 text-gray-900 flex items-center px-4 sm:px-0">
           <MessageSquare className="w-6 h-6 mr-3 text-purple-500" />
           {t("home.testimonials")}
@@ -166,11 +202,17 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
             }
           `}
         </style>
-      </section>
+      </motion.section>
 
       {/* Services Section */}
       {services && services.length > 0 && (
-        <section className="max-w-5xl mx-auto">
+        <motion.section 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-5xl mx-auto"
+        >
           <h2 className="text-2xl font-bold mb-8 text-gray-900 flex items-center">
             <Briefcase className="w-6 h-6 mr-3 text-indigo-500" />
             {lang === "zh" ? "服務項目" : "Services"}
@@ -184,8 +226,12 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
                 { bg: "linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%)" },
               ];
               return (
-                <div
+                <motion.div
                   key={service.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: idx * 0.15, ease: "easeOut" }}
                   className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default"
                   style={{
                     background: cardStyles[idx % cardStyles.length].bg,
@@ -213,7 +259,7 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
                       {service.description[lang] || service.description.zh}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -228,7 +274,7 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
               yvo.wagian.huang@gmail.com
             </a>
           </p>
-        </section>
+        </motion.section>
       )}
     </div>
   );
