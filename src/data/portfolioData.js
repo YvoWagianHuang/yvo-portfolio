@@ -105,28 +105,28 @@ export const portfolioData = {
       id: 2,
       title: "思考鏈：由思緒連結文字",
       thumbnail: "/resources/chain_of_thought_cover.png",
-      pdfUrl: "/resources/思考鏈：由思緒連結文字.pdf",
+      pdfUrl: "/resources/chain_of_thought.pdf",
       description: "這是我專為高中生設計的作文教材，引導學生運用「思考鏈」的邏輯架構，將零散的思緒精準地轉化為結構清晰、具備說服力的文字。"
     },
     {
       id: 3,
       title: "英語辯論遊戲化教材",
       thumbnail: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=300&q=80",
-      pdfUrl: "/resources/英語辯論遊戲化教材.pdf",
+      pdfUrl: "/resources/gamified_english_debate_materials.pdf",
       description: "將 RPG 機制引入英語課堂，解決小學生學習動機痛點的代表作。"
     },
     {
       id: 4,
       title: "梅西英語數位教材",
       thumbnail: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=300&q=80",
-      pdfUrl: "/resources/梅西英語數位教材.pdf",
+      pdfUrl: "/resources/messi_english_digital_materials.pdf",
       description: "結合媒體素養與體育敘事的數位教學方案，讓學生可以在國際學校中以英文表達完整想法。"
     },
     {
       id: 5,
       title: "三隻小豬倒數計時器",
       thumbnail: "https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&w=300&q=80",
-      url: "/resources/三隻小豬倒數計時器.html",
+      url: "/resources/three_little_pigs_timer.html",
       buttonText: "體驗工具",
       icon: "external-link",
       tag: "HTML 工具",
@@ -136,7 +136,7 @@ export const portfolioData = {
       id: 6,
       title: "學術英文寫作入門：A Guide to SAQ",
       thumbnail: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=300&q=80",
-      pdfUrl: "/resources/學術英文寫作入門_A_Guide_to_SAQ.pdf",
+      pdfUrl: "/resources/intro_to_academic_english_writing_saq.pdf",
       description: "這是我專為大學生設計的學術英文寫作入門教材。針對常見的簡答申論題 (Short Answer Questions) 提供系統化的寫作框架，幫助學生快速建立專業的學術表達能力。"
     },
     {
