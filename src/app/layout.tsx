@@ -8,7 +8,7 @@ import I18nProvider from "@/components/I18nProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "伊理教育 Yvo EdTech",
+  title: "伊理教育 YiliEdTech",
   description: "Yvo Wagian - Learning Experience Designer",
 };
 

@@ -32,7 +32,7 @@ export default function Navbar() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/logo.png" alt="Yili Education Logo" className="h-8 w-8 object-contain rounded-md" />
               <span className="text-xl font-bold tracking-tight text-gray-900">
-                {i18n.language === "zh" ? "伊理教育" : "YvoEdTech"}
+                {i18n.language === "zh" ? "伊理教育" : "YiliEdTech"}
               </span>
             </Link>
           </div>
