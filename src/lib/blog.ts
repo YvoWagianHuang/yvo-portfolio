@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import remarkBreaks from "remark-breaks";
 
 const postsDirectory = path.join(process.cwd(), "content/blog");
 
@@ -57,6 +58,7 @@ export async function getPostData(id: string): Promise<BlogPost> {
   const matterResult = matter(fileContents);
 
   const processedContent = await remark()
+    .use(remarkBreaks)
     .use(html, { sanitize: false })
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
