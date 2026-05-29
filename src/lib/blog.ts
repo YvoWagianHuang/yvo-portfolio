@@ -30,9 +30,13 @@ export function getSortedPostsData(): BlogPost[] {
       const fileContents = fs.readFileSync(fullPath, "utf8");
       const matterResult = matter(fileContents);
 
+      const rawDate = matterResult.data.date;
+      const dateStr = rawDate instanceof Date ? rawDate.toISOString().split('T')[0] : String(rawDate || '');
+
       return {
         id,
-        ...(matterResult.data as Omit<BlogPost, "id" | "content">),
+        ...(matterResult.data as Omit<BlogPost, "id" | "content" | "date">),
+        date: dateStr,
         content: matterResult.content,
       };
     });
@@ -47,7 +51,8 @@ export function getSortedPostsData(): BlogPost[] {
 }
 
 export async function getPostData(id: string): Promise<BlogPost> {
-  const fullPath = path.join(postsDirectory, `${id}.md`);
+  const decodedId = decodeURIComponent(id);
+  const fullPath = path.join(postsDirectory, `${decodedId}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
 
@@ -56,9 +61,13 @@ export async function getPostData(id: string): Promise<BlogPost> {
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
+  const rawDate = matterResult.data.date;
+  const dateStr = rawDate instanceof Date ? rawDate.toISOString().split('T')[0] : String(rawDate || '');
+
   return {
     id,
-    ...(matterResult.data as Omit<BlogPost, "id" | "content">),
+    ...(matterResult.data as Omit<BlogPost, "id" | "content" | "date">),
+    date: dateStr,
     content: contentHtml,
   };
 }
