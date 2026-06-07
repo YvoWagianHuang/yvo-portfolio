@@ -100,13 +100,32 @@ export const portfolioData = {
 
   // 3. 資源 / 教材 (Resources)
   resources: [
-
     {
-      id: 2,
-      title: "思考鏈：由思緒連結文字",
-      thumbnail: "/resources/chain_of_thought_cover.png",
-      pdfUrl: "/resources/chain_of_thought.pdf",
-      description: "這是我專為高中生設計的作文教材，引導學生運用「思考鏈」的邏輯架構，將零散的思緒精準地轉化為結構清晰、具備說服力的文字。"
+      id: 7,
+      title: "Tabula：費曼 AI 學伴",
+      thumbnail: "/resources/Tabula UI.png",
+      url: "https://cheery-malabi-756027.netlify.app/",
+      buttonText: "開始對話",
+      icon: "message-square",
+      tag: "AI 助教",
+      description: "「Tabula」取名自拉丁文「白板」，是一張白紙般的「費曼 AI 學伴」。基於「以教為學」理論，讓學習者透過「教導」它來內化知識。適合想深度學習、突破瓶頸的你，快來當 Tabula 的老師，陪它一起成長吧！"
+    },
+    {
+      id: 8,
+      title: "英文大富翁 (Travel Monopoly)",
+      thumbnail: "https://images.unsplash.com/photo-1632501641765-e568d28b0615?auto=format&fit=crop&w=300&q=80",
+      url: "http://monopoly.englishgame.yvowagian.com/",
+      buttonText: "前往體驗",
+      icon: "external-link",
+      tag: "互動桌遊",
+      description: "英文大富翁 (Travel Monopoly)是一款專為課堂語言教學設計的互動式多人桌遊應用程式。它完美保留了傳統大富翁刺激的置產、道具與經濟競爭機制（如強制收購、破產拍賣、遙控骰子等），並巧妙地將「答題挑戰」融入遊戲核心——玩家必須透過回答自訂的英文題目來賺取打工獎金、減免過路費或升級建築。本工具採純前端架構開發，不僅提供一鍵安裝的 Mac 離線桌面版，更能輕鬆部署為支援手機與平板的跨平台網頁版，是教師用來活化班級氣氛、讓學生在歡樂競技中無痛複習英文的絕佳教學利器。"
+    },
+    {
+      id: 6,
+      title: "學術英文寫作入門：A Guide to SAQ",
+      thumbnail: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=300&q=80",
+      pdfUrl: "/resources/intro_to_academic_english_writing_saq.pdf",
+      description: "這是我專為大學生設計的學術英文寫作入門教材。針對常見的簡答申論題 (Short Answer Questions) 提供系統化的寫作框架，幫助學生快速建立專業的學術表達能力。"
     },
     {
       id: 3,
@@ -114,6 +133,13 @@ export const portfolioData = {
       thumbnail: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=300&q=80",
       pdfUrl: "/resources/gamified_english_debate_materials.pdf",
       description: "將 RPG 機制引入英語課堂，解決小學生學習動機痛點的代表作。"
+    },
+    {
+      id: 2,
+      title: "思考鏈：由思緒連結文字",
+      thumbnail: "/resources/chain_of_thought_cover.png",
+      pdfUrl: "/resources/chain_of_thought.pdf",
+      description: "這是我專為高中生設計的作文教材，引導學生運用「思考鏈」的邏輯架構，將零散的思緒精準地轉化為結構清晰、具備說服力的文字。"
     },
     {
       id: 4,
@@ -131,23 +157,6 @@ export const portfolioData = {
       icon: "external-link",
       tag: "HTML 工具",
       description: "這是我開發的一個課堂倒數計時小工具，透過可愛的三隻小豬視覺設計，增加課堂活動的趣味性與參與感。"
-    },
-    {
-      id: 6,
-      title: "學術英文寫作入門：A Guide to SAQ",
-      thumbnail: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=300&q=80",
-      pdfUrl: "/resources/intro_to_academic_english_writing_saq.pdf",
-      description: "這是我專為大學生設計的學術英文寫作入門教材。針對常見的簡答申論題 (Short Answer Questions) 提供系統化的寫作框架，幫助學生快速建立專業的學術表達能力。"
-    },
-    {
-      id: 7,
-      title: "Tabula：費曼 AI 學伴",
-      thumbnail: "/resources/Tabula UI.png",
-      url: "https://cheery-malabi-756027.netlify.app/",
-      buttonText: "開始對話",
-      icon: "message-square",
-      tag: "AI 助教",
-      description: "「Tabula」取名自拉丁文「白板」，是一張白紙般的「費曼 AI 學伴」。基於「以教為學」理論，讓學習者透過「教導」它來內化知識。適合想深度學習、突破瓶頸的你，快來當 Tabula 的老師，陪它一起成長吧！"
     }
   ],
 
