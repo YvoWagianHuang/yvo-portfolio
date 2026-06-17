@@ -9,12 +9,25 @@ import type { BlogPost } from "@/lib/blog";
 export default function BlogListClient({ posts }: { posts: BlogPost[] }) {
   const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState("全部");
   const postsPerPage = 5;
+
+  const categories = ["全部", "教育科技", "教育觀點", "教學現場", "芬蘭留學日記"];
+
+  const filteredPosts = posts.filter(post => 
+    selectedCategory === "全部" || post.category === selectedCategory
+  );
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-  const totalPages = Math.ceil(posts.length / postsPerPage);
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+
+  // Reset to first page when category changes
+  const handleCategoryChange = (cat: string) => {
+    setSelectedCategory(cat);
+    setCurrentPage(1);
+  };
 
   return (
     <div className="max-w-3xl mx-auto py-8">
@@ -23,6 +36,23 @@ export default function BlogListClient({ posts }: { posts: BlogPost[] }) {
         <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
           {t("nav.blog")}
         </h1>
+      </div>
+
+      {/* Category Tabs */}
+      <div className="flex flex-wrap gap-2 mb-10">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => handleCategoryChange(cat)}
+            className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
+              selectedCategory === cat
+                ? "bg-blue-600 text-white shadow-md scale-105"
+                : "bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900"
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
       </div>
       <div className="space-y-10">
         {currentPosts.map((post) => (
@@ -38,9 +68,16 @@ export default function BlogListClient({ posts }: { posts: BlogPost[] }) {
               </div>
             )}
             <div className="flex-1">
-              <p className="text-sm text-gray-400 mb-2 font-medium tracking-wide uppercase">
-                {post.date}
-              </p>
+              <div className="flex items-center gap-3 mb-2">
+                {post.category && (
+                  <span className="bg-blue-50 text-blue-700 text-xs font-bold px-2.5 py-0.5 rounded border border-blue-200">
+                    {post.category}
+                  </span>
+                )}
+                <p className="text-sm text-gray-400 font-medium tracking-wide uppercase">
+                  {post.date}
+                </p>
+              </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
                 <Link href={`/blog/${post.id}`}>{post.title}</Link>
               </h2>

@@ -18,5 +18,6 @@ collections:
       - { label: "發布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "摘要", name: "excerpt", widget: "text", required: false }
       - { label: "封面圖片", name: "imageUrl", widget: "image", required: false }
+      - { label: "分類", name: "category", widget: "select", options: ["教育科技", "教育觀點", "教學現場", "芬蘭留學日記"], required: false }
       - { label: "PDF 檔案 (可選)", name: "pdfUrl", widget: "file", required: false }
       - { label: "文章內容", name: "body", widget: "markdown" }

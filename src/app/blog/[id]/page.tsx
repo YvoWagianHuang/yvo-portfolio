@@ -22,9 +22,9 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
     <article className="max-w-3xl mx-auto py-12">
       <Link
         href="/blog"
-        className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 mb-10 transition-colors"
+        className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors"
       >
-        <ArrowLeft className="w-4 h-4 mr-2" /> 返回公告欄
+        <ArrowLeft className="w-4 h-4 mr-2" /> 返回部落格
       </Link>
       <header className="mb-10 pb-10 border-b border-gray-100">
         <p className="text-sm text-blue-600 font-bold tracking-widest uppercase mb-3">

@@ -15,6 +15,7 @@ export interface BlogPost {
   content: string;
   imageUrl?: string;
   pdfUrl?: string;
+  category?: string;
 }
 
 export function getSortedPostsData(): BlogPost[] {

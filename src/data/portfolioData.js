@@ -10,7 +10,7 @@ export const portfolioData = {
         home: "首頁",
         about: "個人簡介",
         resources: "資源區",
-        blog: "公告欄",
+        blog: "部落格",
         contact: "聯絡我"
       },
       common: {
