@@ -103,8 +103,8 @@ export const portfolioData = {
     {
       id: 7,
       title: "Tabula：費曼 AI 學伴",
-      thumbnail: "/resources/Tabula UI.png",
-      url: "https://cheery-malabi-756027.netlify.app/",
+      thumbnail: "/resources/tabula-cover.png",
+      url: "https://tabula.yvowagian.com/",
       buttonText: "開始對話",
       icon: "message-square",
       tag: "AI 助教",
@@ -261,9 +261,8 @@ export const portfolioData = {
     }
   },
 
-  // 7. 首頁精選專案 (Featured Project)
   featuredProject: {
-    imageUrl: "/resources/Tabula UI.png",
+    imageUrl: "/resources/tabula-cover.png",
     title: {
       zh: "Tabula：費曼 AI 學伴",
       en: "Tabula: Your Feynman Study Buddy"
@@ -273,7 +272,7 @@ export const portfolioData = {
       en: "Named after the Latin word for 'blank slate', Tabula is a digital student who knows nothing—yet. Built on the Feynman Technique, Tabula never gives you answers. Instead, it asks relentlessly curious questions, guiding you to translate complex knowledge into plain language and uncover the true gaps in your understanding.\n\nPowered by a unique hand-drawn interface that creates a stress-free learning environment. With over 100 deep interactions logged, Tabula is eager to learn from you. Come teach Tabula something!"
     },
     link: {
-      url: "https://cheery-malabi-756027.netlify.app/",
+      url: "https://tabula.yvowagian.com/",
       label: { zh: "立即體驗", en: "Try It Now" }
     }
   },
