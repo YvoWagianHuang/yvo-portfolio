@@ -113,12 +113,12 @@ export const portfolioData = {
     {
       id: 8,
       title: "英文大富翁 (Travel Monopoly)",
-      thumbnail: "https://images.unsplash.com/photo-1632501641765-e568d28b0615?auto=format&fit=crop&w=300&q=80",
+      thumbnail: "/resources/travel-monopoly-cover.png",
       url: "http://monopoly.englishgame.yvowagian.com/",
       buttonText: "前往體驗",
       icon: "external-link",
       tag: "互動桌遊",
-      description: "英文大富翁 (Travel Monopoly)是一款專為課堂語言教學設計的互動式多人桌遊應用程式。它完美保留了傳統大富翁刺激的置產、道具與經濟競爭機制（如強制收購、破產拍賣、遙控骰子等），並巧妙地將「答題挑戰」融入遊戲核心——玩家必須透過回答自訂的英文題目來賺取打工獎金、減免過路費或升級建築。本工具採純前端架構開發，不僅提供一鍵安裝的 Mac 離線桌面版，更能輕鬆部署為支援手機與平板的跨平台網頁版，是教師用來活化班級氣氛、讓學生在歡樂競技中無痛複習英文的絕佳教學利器。"
+      description: "英文大富翁 (Travel Monopoly)是一款專為課堂語言教學設計的互動式多人桌遊應用程式。是教師用來活化班級氣氛、讓學生在歡樂競技中無痛複習英文的絕佳教學利器。"
     },
     {
       id: 6,
