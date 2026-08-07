@@ -1,17 +1,16 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import { portfolioData } from "@/data/portfolioData";
+import about from "@/data/about.json";
 import { Mail } from "lucide-react";
 import { Linkedin } from "@/components/Icons";
 
 export default function About() {
   const { i18n } = useTranslation();
   const lang = i18n.language as "zh" | "en";
-  const { about } = portfolioData;
 
-  const role = typeof about.role === "string" ? about.role : about.role[lang] || about.role.zh;
-  const bio = typeof about.bio === "string" ? about.bio : about.bio[lang] || about.bio.zh;
+  const role = lang === "zh" ? about.role_zh : about.role_en;
+  const bio = lang === "zh" ? about.bio_zh : about.bio_en;
 
   return (
     <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-16 py-16 px-4">
@@ -47,7 +46,7 @@ export default function About() {
             {lang === "zh" ? "伊理教育：顛覆傳統的邀請" : "Yili Education: An Invitation to Disrupt Tradition"}
           </h3>
           <div className="prose prose-gray text-gray-700 leading-relaxed space-y-4">
-            {(typeof about.manifesto === "string" ? about.manifesto : about.manifesto?.[lang] || about.manifesto?.zh)?.split("\n").map((line, index) => (
+            {(lang === "zh" ? about.manifesto_zh : about.manifesto_en)?.split("\n").map((line, index) => (
               <p key={index} className={line.match(/^\d+\./) ? "pl-4 font-medium" : ""}>
                 {line}
               </p>

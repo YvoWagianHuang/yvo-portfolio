@@ -20,3 +20,20 @@ collections:
       - { label: "分類", name: "category", widget: "select", options: ["教育科技", "教育觀點", "教學現場", "芬蘭留學日記"], required: false }
       - { label: "PDF 檔案 (可選)", name: "pdfUrl", widget: "file", required: false }
       - { label: "文章內容", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "頁面管理 (Pages)"
+    files:
+      - name: "about"
+        label: "關於我 (About)"
+        file: "src/data/about.json"
+        description: "編輯關於我頁面的文字與圖片"
+        fields:
+          - { label: "姓名", name: "name", widget: "string" }
+          - { label: "大頭貼", name: "avatarUrl", widget: "image" }
+          - { label: "職稱 (中文)", name: "role_zh", widget: "string" }
+          - { label: "職稱 (英文)", name: "role_en", widget: "string" }
+          - { label: "個人簡介 (中文)", name: "bio_zh", widget: "text" }
+          - { label: "個人簡介 (英文)", name: "bio_en", widget: "text" }
+          - { label: "教育理念宣言 (中文)", name: "manifesto_zh", widget: "text" }
+          - { label: "教育理念宣言 (英文)", name: "manifesto_en", widget: "text" }
