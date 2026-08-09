@@ -1,7 +1,12 @@
 import { Mail } from "lucide-react";
 import { Linkedin } from "@/components/Icons";
 
-export default function Footer() {
+type FooterProps = {
+  lang: string;
+  dict: any;
+};
+
+export default function Footer({ lang, dict }: FooterProps) {
   return (
     <footer className="bg-white border-t border-gray-200 mt-auto">
       <div className="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
@@ -32,7 +37,7 @@ export default function Footer() {
           </div>
         </div>
         <p className="text-center text-sm text-gray-400 font-medium tracking-wide">
-          &copy; {new Date().getFullYear()} Yvo Wagian. All rights reserved.
+          &copy; {new Date().getFullYear()} Yvo Wagian. {dict.footer.rights}.
         </p>
       </div>
     </footer>

@@ -3,10 +3,11 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Calendar, ArrowUpRight } from "lucide-react";
 import type { Metadata } from 'next';
 import aboutData from "@/data/about.json";
+import { getDictionary } from "@/dictionaries";
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
-  const { id } = await params;
-  const postData = await getPostData(id);
+export async function generateMetadata({ params }: { params: Promise<{ id: string, lang: string }> }): Promise<Metadata> {
+  const { id, lang } = await params;
+  const postData = await getPostData(id, lang);
   
   return {
     title: `${postData.title} | 伊理教育 YiliEdTech`,
@@ -20,28 +21,42 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 }
 
 export async function generateStaticParams() {
-  const posts = getSortedPostsData();
-  return posts.map((post) => ({
-    id: post.id,
-  }));
+  // We need to generate paths for all languages.
+  // For now, let's just get posts from zh since they are the source of truth,
+  // or we'll update getSortedPostsData to return posts for all langs.
+  const posts = getSortedPostsData('zh');
+  
+  const paths = [];
+  for (const lang of ['zh', 'en', 'fi']) {
+    for (const post of posts) {
+      paths.push({ lang, id: post.id });
+    }
+  }
+  return paths;
 }
 
-export default async function Post({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
-  const postData = await getPostData(id);
-  const allPosts = getSortedPostsData();
+export default async function Post({ params }: { params: Promise<{ id: string, lang: string }> }) {
+  const { id, lang } = await params;
+  const dict = await getDictionary(lang as 'zh' | 'en' | 'fi');
+  
+  // Pass lang to blog functions
+  const postData = await getPostData(id, lang);
+  const allPosts = getSortedPostsData(lang);
   const currentIndex = allPosts.findIndex((p) => p.id === id);
   
   const prevPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
   const nextPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
 
+  const role = lang === 'zh' ? aboutData.role_zh : aboutData.role_en;
+  const bio = lang === 'zh' ? aboutData.bio_zh : aboutData.bio_en;
+
   return (
     <article className="max-w-3xl mx-auto py-12">
       <Link
-        href="/blog"
+        href={`/${lang}/blog`}
         className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors"
       >
-        <ArrowLeft className="w-4 h-4 mr-2" /> 返回部落格
+        <ArrowLeft className="w-4 h-4 mr-2" /> {dict.nav.blog}
       </Link>
       <header className="mb-10 pb-10 border-b border-gray-100">
         <div className="flex items-center gap-4 mb-5">
@@ -79,18 +94,20 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
         <img src={aboutData.avatarUrl} alt="Author" className="w-24 h-24 rounded-full object-cover shadow-sm border-2 border-white" />
         <div className="text-center sm:text-left">
           <h3 className="text-xl font-bold text-gray-900">{aboutData.name.split('/')[0]} (Yvo)</h3>
-          <p className="text-blue-600 font-medium text-sm mt-1 mb-3">{aboutData.role_zh}</p>
-          <p className="text-gray-600 text-sm leading-relaxed">{aboutData.bio_zh.substring(0, 115)}...</p>
+          <p className="text-blue-600 font-medium text-sm mt-1 mb-3">{role}</p>
+          <p className="text-gray-600 text-sm leading-relaxed">{bio.substring(0, 115)}...</p>
         </div>
       </div>
 
       {/* CTA Box */}
       <div className="mt-8 bg-blue-600 text-white rounded-3xl p-8 sm:p-10 text-center shadow-lg relative overflow-hidden">
         <div className="relative z-10">
-          <h3 className="text-2xl sm:text-3xl font-extrabold mb-4">準備好開啟你的學習旅程了嗎？</h3>
-          <p className="text-blue-100 mb-8 max-w-lg mx-auto">無論是預約客製化課程、留學申請文件輔導，或是教材設計合作，都歡迎隨時與我聯繫，讓我為你的目標提供專業協助。</p>
-          <Link href="/contact" className="inline-flex items-center bg-white text-blue-600 font-bold py-3.5 px-8 rounded-xl hover:bg-gray-50 transition-colors shadow-sm group">
-            立即預約諮詢
+          <h3 className="text-2xl sm:text-3xl font-extrabold mb-4">{dict.blog.consultationText}</h3>
+          <p className="text-blue-100 mb-8 max-w-lg mx-auto">
+            {lang === "zh" ? "無論是預約客製化課程、留學申請文件輔導，或是教材設計合作，都歡迎隨時與我聯繫，讓我為你的目標提供專業協助。" : "Whether you are looking to book a customized course, need help with study abroad application documents, or want to collaborate on material design, feel free to contact me at any time."}
+          </p>
+          <Link href={`/${lang}/contact`} className="inline-flex items-center bg-white text-blue-600 font-bold py-3.5 px-8 rounded-xl hover:bg-gray-50 transition-colors shadow-sm group">
+            {dict.blog.bookConsultation}
             <ArrowUpRight className="w-5 h-5 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
         </div>
@@ -104,11 +121,11 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
         <div>
           {prevPost && (
             <Link
-              href={`/blog/${prevPost.id}`}
+              href={`/${lang}/blog/${prevPost.id}`}
               className="group block p-6 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all text-left"
             >
               <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 block">
-                上一篇
+                {dict.common.prevPage}
               </span>
               <span className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors flex items-center">
                 <ArrowLeft className="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" />
@@ -120,11 +137,11 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
         <div className="text-right">
           {nextPost && (
             <Link
-              href={`/blog/${nextPost.id}`}
+              href={`/${lang}/blog/${nextPost.id}`}
               className="group block p-6 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all text-right flex flex-col items-end"
             >
               <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 block">
-                下一篇
+                {dict.common.nextPage}
               </span>
               <span className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors flex items-center justify-end">
                 {nextPost.title}

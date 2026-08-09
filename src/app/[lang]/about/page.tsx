@@ -1,16 +1,19 @@
-"use client";
-
-import { useTranslation } from "react-i18next";
 import about from "@/data/about.json";
 import { Mail } from "lucide-react";
 import { Linkedin } from "@/components/Icons";
 
-export default function About() {
-  const { i18n } = useTranslation();
-  const lang = i18n.language as "zh" | "en";
+export default async function About({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
 
-  const role = lang === "zh" ? about.role_zh : about.role_en;
-  const bio = lang === "zh" ? about.bio_zh : about.bio_en;
+  // Fallback to zh if translation doesn't exist
+  const getField = (keyBase: string) => {
+    const key = `${keyBase}_${lang}` as keyof typeof about;
+    return (about[key] || about[`${keyBase}_zh` as keyof typeof about]) as string;
+  };
+
+  const role = getField("role");
+  const bio = getField("bio");
+  const manifesto = getField("manifesto");
 
   return (
     <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-16 py-16 px-4">
@@ -30,7 +33,7 @@ export default function About() {
           {role}
         </h2>
         <div className="prose prose-gray text-gray-700 leading-relaxed text-lg space-y-6">
-          {bio.split("\n").map((paragraph, index) => (
+          {bio.split("\n").map((paragraph: string, index: number) => (
             <p key={index}>{paragraph}</p>
           ))}
         </div>
@@ -43,10 +46,10 @@ export default function About() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </span>
-            {lang === "zh" ? "伊理教育：顛覆傳統的邀請" : "Yili Education: An Invitation to Disrupt Tradition"}
+            {lang === "zh" ? "伊理教育：顛覆傳統的邀請" : lang === "fi" ? "Yili Education: Kutsu uudistamaan perinteitä" : "Yili Education: An Invitation to Disrupt Tradition"}
           </h3>
           <div className="prose prose-gray text-gray-700 leading-relaxed space-y-4">
-            {(lang === "zh" ? about.manifesto_zh : about.manifesto_en)?.split("\n").map((line, index) => (
+            {manifesto?.split("\n").map((line: string, index: number) => (
               <p key={index} className={line.match(/^\d+\./) ? "pl-4 font-medium" : ""}>
                 {line}
               </p>
@@ -58,6 +61,8 @@ export default function About() {
           <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-6">
             {lang === "zh"
               ? "聯絡我 (預約課程・演講邀約・教材合作)"
+              : lang === "fi" 
+              ? "Ota yhteyttä (Kurssit・Puhujakeikat・Materiaalit)"
               : "Contact Me (Courses・Speaking・Materials)"}
           </h3>
           <div className="flex flex-wrap gap-4">

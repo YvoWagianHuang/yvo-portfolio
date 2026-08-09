@@ -1,8 +1,5 @@
-import { getSortedPostsData } from "@/lib/blog";
-import HomeClient from "@/components/HomeClient";
+import { redirect } from "next/navigation";
 
-export default function Page() {
-  const allPostsData = getSortedPostsData();
-  const recentPosts = allPostsData.slice(0, 3);
-  return <HomeClient posts={recentPosts} />;
+export default function RootPage() {
+  redirect("/zh");
 }

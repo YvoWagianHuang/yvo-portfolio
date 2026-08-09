@@ -2,20 +2,26 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
 import { FileText, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import type { BlogPost } from "@/lib/blog";
 
-export default function BlogListClient({ posts }: { posts: BlogPost[] }) {
-  const { t } = useTranslation();
+type BlogListClientProps = {
+  posts: BlogPost[];
+  lang: string;
+  dict: any;
+};
+
+export default function BlogListClient({ posts, lang, dict }: BlogListClientProps) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedCategory, setSelectedCategory] = useState("全部");
+  const [selectedCategory, setSelectedCategory] = useState(dict.common.all);
   const postsPerPage = 5;
 
-  const categories = ["全部", "教育科技", "教育觀點", "教學現場", "芬蘭留學日記"];
+  // Extract unique categories from posts dynamically, plus "All"
+  const dynamicCategories = Array.from(new Set(posts.map(p => p.category).filter(Boolean))) as string[];
+  const categories = [dict.common.all, ...dynamicCategories];
 
   const filteredPosts = posts.filter(post => 
-    selectedCategory === "全部" || post.category === selectedCategory
+    selectedCategory === dict.common.all || post.category === selectedCategory
   );
 
   const indexOfLastPost = currentPage * postsPerPage;
@@ -23,7 +29,6 @@ export default function BlogListClient({ posts }: { posts: BlogPost[] }) {
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
 
-  // Reset to first page when category changes
   const handleCategoryChange = (cat: string) => {
     setSelectedCategory(cat);
     setCurrentPage(1);
@@ -34,7 +39,7 @@ export default function BlogListClient({ posts }: { posts: BlogPost[] }) {
       <div className="flex items-center mb-10 border-b border-gray-200 pb-6">
         <FileText className="w-8 h-8 mr-4 text-gray-800" />
         <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
-          {t("nav.blog")}
+          {dict.nav.blog}
         </h1>
       </div>
 
@@ -79,21 +84,21 @@ export default function BlogListClient({ posts }: { posts: BlogPost[] }) {
                 </p>
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
-                <Link href={`/blog/${post.id}`}>{post.title}</Link>
+                <Link href={`/${lang}/blog/${post.id}`}>{post.title}</Link>
               </h2>
               <p className="text-gray-600 mb-5 leading-relaxed text-lg">{post.excerpt}</p>
               <Link
-                href={`/blog/${post.id}`}
+                href={`/${lang}/blog/${post.id}`}
                 className="inline-flex items-center text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors"
               >
-                {t("common.readMore")}
+                {dict.common.readMore}
                 <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </article>
         ))}
         {currentPosts.length === 0 && (
-          <p className="text-gray-500 text-center py-10">目前還沒有文章喔！</p>
+          <p className="text-gray-500 text-center py-10">{dict.common.noPosts}</p>
         )}
       </div>
 
@@ -107,10 +112,10 @@ export default function BlogListClient({ posts }: { posts: BlogPost[] }) {
               currentPage === 1 ? "text-gray-400 cursor-not-allowed" : "text-gray-700 hover:bg-gray-100"
             }`}
           >
-            <ChevronLeft className="w-5 h-5 mr-1" /> 上一頁
+            <ChevronLeft className="w-5 h-5 mr-1" /> {dict.common.prevPage}
           </button>
           <span className="text-sm text-gray-500 font-medium">
-            Page {currentPage} of {totalPages}
+            {dict.common.page} {currentPage} {dict.common.of} {totalPages}
           </span>
           <button
             onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
@@ -119,7 +124,7 @@ export default function BlogListClient({ posts }: { posts: BlogPost[] }) {
               currentPage === totalPages ? "text-gray-400 cursor-not-allowed" : "text-gray-700 hover:bg-gray-100"
             }`}
           >
-            下一頁 <ChevronRight className="w-5 h-5 ml-1" />
+            {dict.common.nextPage} <ChevronRight className="w-5 h-5 ml-1" />
           </button>
         </div>
       )}

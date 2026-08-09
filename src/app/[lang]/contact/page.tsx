@@ -1,13 +1,13 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { useParams } from "next/navigation";
 import { Mail, Send } from "lucide-react";
 import { Linkedin } from "@/components/Icons";
-import { useState } from "react";
+import { useState, use, useEffect } from "react";
 
 export default function Contact() {
-  const { t, i18n } = useTranslation();
-  const lang = i18n.language as "zh" | "en";
+  const params = useParams();
+  const lang = (params?.lang as "zh" | "en" | "fi") || "zh";
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

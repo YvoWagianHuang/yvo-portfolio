@@ -1,0 +1,34 @@
+{
+  "nav": {
+    "home": "Etusivu",
+    "about": "Tietoa",
+    "resources": "Materiaalit",
+    "blog": "Blogi",
+    "contact": "Ota yhteyttä"
+  },
+  "common": {
+    "switchLang": "中文",
+    "switchLangPath": "/zh",
+    "readMore": "Lue lisää",
+    "all": "Kaikki",
+    "prevPage": "Edellinen",
+    "nextPage": "Seuraava",
+    "noPosts": "Ei vielä julkaisuja!",
+    "page": "Sivu",
+    "of": "/"
+  },
+  "footer": {
+    "rights": "Kaikki oikeudet pidätetään"
+  },
+  "home": {
+    "title": "Oppimiskokemusten suunnittelua, todellista muutosta",
+    "announcements": "Viimeisimmät päivitykset",
+    "testimonials": "Opiskelijoiden & Vanhempien palautteet",
+    "servicesTitle": "Palvelut",
+    "servicesContact": "Kiinnostaako yhteistyö? Ota rohkeasti yhteyttä:"
+  },
+  "blog": {
+    "bookConsultation": "Varaa aika",
+    "consultationText": "Oletko valmis aloittamaan oppimismatkasi?"
+  }
+}

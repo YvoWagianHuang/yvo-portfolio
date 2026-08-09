@@ -9,7 +9,7 @@ public_folder: "/images"
 collections:
   - name: "blog"
     label: "文章 (Blog)"
-    folder: "content/blog"
+    folder: "content/blog/zh"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -33,7 +33,10 @@ collections:
           - { label: "大頭貼", name: "avatarUrl", widget: "image" }
           - { label: "職稱 (中文)", name: "role_zh", widget: "string" }
           - { label: "職稱 (英文)", name: "role_en", widget: "string" }
+          - { label: "職稱 (芬蘭文)", name: "role_fi", widget: "string", required: false }
           - { label: "個人簡介 (中文)", name: "bio_zh", widget: "text" }
           - { label: "個人簡介 (英文)", name: "bio_en", widget: "text" }
+          - { label: "個人簡介 (芬蘭文)", name: "bio_fi", widget: "text", required: false }
           - { label: "教育理念宣言 (中文)", name: "manifesto_zh", widget: "text" }
           - { label: "教育理念宣言 (英文)", name: "manifesto_en", widget: "text" }
+          - { label: "教育理念宣言 (芬蘭文)", name: "manifesto_fi", widget: "text", required: false }

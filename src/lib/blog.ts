@@ -5,8 +5,6 @@ import { remark } from "remark";
 import html from "remark-html";
 import remarkBreaks from "remark-breaks";
 
-const postsDirectory = path.join(process.cwd(), "content/blog");
-
 export interface BlogPost {
   id: string;
   title: string;
@@ -18,7 +16,11 @@ export interface BlogPost {
   category?: string;
 }
 
-export function getSortedPostsData(): BlogPost[] {
+const getPostsDirectory = (lang: string = "zh") => path.join(process.cwd(), `content/blog/${lang}`);
+
+export function getSortedPostsData(lang: string = "zh"): BlogPost[] {
+  const postsDirectory = getPostsDirectory(lang);
+  
   if (!fs.existsSync(postsDirectory)) {
     return [];
   }
@@ -27,7 +29,7 @@ export function getSortedPostsData(): BlogPost[] {
   const allPostsData = fileNames
     .filter((fileName) => fileName.endsWith(".md"))
     .map((fileName) => {
-      const id = fileName.replace(/\.md$/, "");
+      const id = fileName.replace(/\.md$/, "").normalize('NFC');
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, "utf8");
       const matterResult = matter(fileContents);
@@ -52,9 +54,16 @@ export function getSortedPostsData(): BlogPost[] {
   });
 }
 
-export async function getPostData(id: string): Promise<BlogPost> {
+export async function getPostData(id: string, lang: string = "zh"): Promise<BlogPost> {
   const decodedId = decodeURIComponent(id);
-  const fullPath = path.join(postsDirectory, `${decodedId}.md`);
+  const postsDirectory = getPostsDirectory(lang);
+  let fullPath = path.join(postsDirectory, `${decodedId}.md`);
+  
+  // Fallback to zh if not found
+  if (!fs.existsSync(fullPath) && lang !== 'zh') {
+    fullPath = path.join(getPostsDirectory('zh'), `${decodedId}.md`);
+  }
+  
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
 

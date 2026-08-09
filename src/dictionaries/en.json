@@ -1,0 +1,34 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "resources": "Resources",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "common": {
+    "switchLang": "Suomi",
+    "switchLangPath": "/fi",
+    "readMore": "Read More",
+    "all": "All",
+    "prevPage": "Prev",
+    "nextPage": "Next",
+    "noPosts": "No posts available yet!",
+    "page": "Page",
+    "of": "of"
+  },
+  "footer": {
+    "rights": "All Rights Reserved"
+  },
+  "home": {
+    "title": "Designing Learning Experiences, Creating Real Change",
+    "announcements": "Latest Updates",
+    "testimonials": "Student & Parent Feedback",
+    "servicesTitle": "Services",
+    "servicesContact": "Interested in working together? Feel free to reach out:"
+  },
+  "blog": {
+    "bookConsultation": "Book a Consultation",
+    "consultationText": "Ready to start your learning journey?"
+  }
+}

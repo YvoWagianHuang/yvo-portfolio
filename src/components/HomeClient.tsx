@@ -1,15 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
 import { portfolioData } from "@/data/portfolioData";
 import { Gamepad2, Bell, MessageSquare, Briefcase, ArrowRight } from "lucide-react";
 import type { BlogPost } from "@/lib/blog";
 import { motion } from "framer-motion";
 
-export default function HomeClient({ posts }: { posts: BlogPost[] }) {
-  const { t, i18n } = useTranslation();
-  const lang = i18n.language as "zh" | "en";
+type HomeClientProps = {
+  posts: BlogPost[];
+  lang: 'zh' | 'en' | 'fi';
+  dict: any;
+};
+
+export default function HomeClient({ posts, lang, dict }: HomeClientProps) {
   const { testimonials, featuredAnnouncement, featuredProject, gamificationPhilosophy, services } = portfolioData;
 
   const getText = (obj: any) => (typeof obj === "string" ? obj : obj[lang] || obj.zh);
@@ -24,7 +27,7 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
         className="text-center py-16"
       >
         <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-          {t("home.title")}
+          {dict.home.title}
         </h1>
       </motion.section>
 
@@ -51,13 +54,13 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
                   Featured
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-                  {featuredAnnouncement.title[lang] || featuredAnnouncement.title.zh}
+                  {getText(featuredAnnouncement.title)}
                 </h2>
               </div>
             </div>
             <div className="p-6 sm:p-8 bg-white">
               <p className="text-gray-700 text-lg leading-relaxed">
-                {featuredAnnouncement.description[lang] || featuredAnnouncement.description.zh}
+                {getText(featuredAnnouncement.description)}
               </p>
             </div>
           </div>
@@ -77,10 +80,10 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
             <Gamepad2 className="w-8 h-8 text-purple-600" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
-            {gamificationPhilosophy.title[lang] || gamificationPhilosophy.title.zh}
+            {getText(gamificationPhilosophy.title)}
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            {gamificationPhilosophy.description[lang] || gamificationPhilosophy.description.zh}
+            {getText(gamificationPhilosophy.description)}
           </p>
         </motion.section>
       )}
@@ -108,10 +111,10 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
                 Project Spotlight
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
-                {featuredProject.title[lang] || featuredProject.title.zh}
+                {getText(featuredProject.title)}
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                {featuredProject.description[lang] || featuredProject.description.zh}
+                {getText(featuredProject.description)}
               </p>
 
               {featuredProject.link && (
@@ -122,7 +125,7 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-xl hover:from-purple-700 hover:to-indigo-700 hover:shadow-lg hover:shadow-purple-200 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95"
                 >
                   <MessageSquare className="w-5 h-5 mr-3" />
-                  {featuredProject.link.label[lang] || featuredProject.link.label.zh}
+                  {getText(featuredProject.link.label)}
                 </a>
               )}
             </div>
@@ -140,7 +143,7 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
       >
         <h2 className="text-2xl font-bold mb-8 text-gray-900 flex items-center">
           <Bell className="w-6 h-6 mr-3 text-blue-500" />
-          {t("home.announcements")}
+          {dict.home.announcements}
         </h2>
         <div className="grid gap-6">
           {posts.slice(0, 3).map((post) => (
@@ -149,7 +152,7 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
               className="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-blue-100 transition-all duration-300 relative overflow-hidden"
             >
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300"></div>
-              <Link href={`/blog/${post.id}`}>
+              <Link href={`/${lang}/blog/${post.id}`}>
                 <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                   {post.title}
                 </h3>
@@ -171,7 +174,7 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
       >
         <h2 className="text-2xl font-bold mb-8 text-gray-900 flex items-center px-4 sm:px-0">
           <MessageSquare className="w-6 h-6 mr-3 text-purple-500" />
-          {t("home.testimonials")}
+          {dict.home.testimonials}
         </h2>
         <div
           className="flex overflow-x-auto space-x-6 pb-8 snap-x px-4 sm:px-0 hide-scrollbar"
@@ -215,7 +218,7 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
         >
           <h2 className="text-2xl font-bold mb-8 text-gray-900 flex items-center">
             <Briefcase className="w-6 h-6 mr-3 text-indigo-500" />
-            {lang === "zh" ? "服務項目" : "Services"}
+            {dict.home.servicesTitle}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, idx) => {
@@ -248,15 +251,15 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
                   <div className="absolute inset-0 bg-black/25 group-hover:bg-black/30 transition-colors duration-300"></div>
                   <div className="relative z-10 p-6 flex flex-col items-center text-center h-full">
                     <h3 className="text-xl font-extrabold text-white mb-2 tracking-tight drop-shadow-sm">
-                      {service.title[lang] || service.title.zh}
+                      {getText(service.title)}
                     </h3>
                     {service.target && (
                       <span className="inline-block px-3 py-0.5 mb-3 rounded-full text-xs font-semibold bg-white/25 text-white tracking-wide">
-                        {service.target[lang] || service.target.zh}
+                        {getText(service.target)}
                       </span>
                     )}
                     <p className="text-sm text-white/90 leading-relaxed">
-                      {service.description[lang] || service.description.zh}
+                      {getText(service.description)}
                     </p>
                   </div>
                 </motion.div>
@@ -264,9 +267,7 @@ export default function HomeClient({ posts }: { posts: BlogPost[] }) {
             })}
           </div>
           <p className="mt-8 text-center text-gray-500 text-sm">
-            {lang === "zh"
-              ? "有興趣合作？歡迎來信洽談："
-              : "Interested in working together? Feel free to reach out:"}{" "}
+            {dict.home.servicesContact}{" "}
             <a
               href="mailto:yvo.wagian.huang@gmail.com"
               className="font-semibold text-indigo-600 hover:text-indigo-800 transition-colors"
