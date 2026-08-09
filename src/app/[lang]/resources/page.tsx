@@ -1,11 +1,14 @@
-"use client";
-
-import { useTranslation } from "react-i18next";
 import { portfolioData } from "@/data/portfolioData";
 import { BookOpen, Download, ExternalLink, MessageSquare } from "lucide-react";
+import { getDictionary } from "@/dictionaries";
 
-export default function Resources() {
-  const { t } = useTranslation();
+export function generateStaticParams() {
+  return [{ lang: 'zh' }, { lang: 'en' }, { lang: 'fi' }];
+}
+
+export default async function ResourcesPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang as 'zh' | 'en' | 'fi');
   const { resources } = portfolioData;
 
   const getIcon = (iconName: string) => {
@@ -24,7 +27,7 @@ export default function Resources() {
       <div className="flex items-center mb-10">
         <BookOpen className="w-8 h-8 mr-4 text-blue-600" />
         <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
-          {t("nav.resources")}
+          {dict.nav.resources}
         </h1>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -59,7 +62,7 @@ export default function Resources() {
                 className="mt-auto w-full inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-xl hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-200 transition-all duration-300 transform active:scale-95"
               >
                 {getIcon(res.icon || "download")}
-                {res.buttonText || t("common.downloadPdf")}
+                {res.buttonText || dict.common.downloadPdf}
               </a>
             </div>
           </div>

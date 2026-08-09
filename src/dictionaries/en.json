@@ -15,13 +15,14 @@
     "nextPage": "Next",
     "noPosts": "No posts available yet!",
     "page": "Page",
-    "of": "of"
+    "of": "of",
+    "downloadPdf": "Download PDF"
   },
   "footer": {
     "rights": "All Rights Reserved"
   },
   "home": {
-    "title": "Designing Learning Experiences, Creating Real Change",
+    "title": "Make Everyone Fall in Love with Learning",
     "announcements": "Latest Updates",
     "testimonials": "Student & Parent Feedback",
     "servicesTitle": "Services",

@@ -14,14 +14,15 @@
     "prevPage": "上一頁",
     "nextPage": "下一頁",
     "noPosts": "目前還沒有文章喔！",
-    "page": "頁",
-    "of": "共"
+    "page": "第",
+    "of": "頁 / 共",
+    "downloadPdf": "下載 PDF"
   },
   "footer": {
     "rights": "版權所有"
   },
   "home": {
-    "title": "設計學習體驗，創造真實改變",
+    "title": "讓所有人愛上學習",
     "announcements": "最新動態",
     "testimonials": "學員與家長回饋",
     "servicesTitle": "服務項目",

@@ -15,13 +15,14 @@
     "nextPage": "Seuraava",
     "noPosts": "Ei vielä julkaisuja!",
     "page": "Sivu",
-    "of": "/"
+    "of": "/",
+    "downloadPdf": "Lataa PDF"
   },
   "footer": {
     "rights": "Kaikki oikeudet pidätetään"
   },
   "home": {
-    "title": "Oppimiskokemusten suunnittelua, todellista muutosta",
+    "title": "Saadaan kaikki rakastumaan oppimiseen",
     "announcements": "Viimeisimmät päivitykset",
     "testimonials": "Opiskelijoiden & Vanhempien palautteet",
     "servicesTitle": "Palvelut",
