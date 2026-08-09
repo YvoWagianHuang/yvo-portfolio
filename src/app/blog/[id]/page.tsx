@@ -1,6 +1,23 @@
 import { getPostData, getSortedPostsData } from "@/lib/blog";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, ArrowUpRight } from "lucide-react";
+import type { Metadata } from 'next';
+import aboutData from "@/data/about.json";
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const postData = await getPostData(id);
+  
+  return {
+    title: `${postData.title} | 伊理教育 YiliEdTech`,
+    description: postData.excerpt || '伊理教育部落格文章',
+    openGraph: {
+      title: `${postData.title} | 伊理教育 YiliEdTech`,
+      description: postData.excerpt || '伊理教育部落格文章',
+      images: postData.imageUrl ? [postData.imageUrl] : [],
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const posts = getSortedPostsData();
@@ -27,9 +44,17 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
         <ArrowLeft className="w-4 h-4 mr-2" /> 返回部落格
       </Link>
       <header className="mb-10 pb-10 border-b border-gray-100">
-        <p className="text-sm text-blue-600 font-bold tracking-widest uppercase mb-3">
-          {postData.date}
-        </p>
+        <div className="flex items-center gap-4 mb-5">
+          {postData.category && (
+            <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-sm font-bold rounded-full">
+              {postData.category}
+            </span>
+          )}
+          <p className="text-sm text-gray-500 font-medium flex items-center">
+            <Calendar className="w-4 h-4 mr-1.5" />
+            {postData.date}
+          </p>
+        </div>
         <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
           {postData.title}
         </h1>
@@ -48,6 +73,31 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
         className="prose prose-lg prose-blue max-w-none text-gray-700 leading-loose"
         dangerouslySetInnerHTML={{ __html: postData.content }}
       />
+
+      {/* Author Box */}
+      <div className="mt-16 p-8 bg-gray-50 rounded-3xl border border-gray-100 flex flex-col sm:flex-row items-center sm:items-start gap-6">
+        <img src={aboutData.avatarUrl} alt="Author" className="w-24 h-24 rounded-full object-cover shadow-sm border-2 border-white" />
+        <div className="text-center sm:text-left">
+          <h3 className="text-xl font-bold text-gray-900">{aboutData.name.split('/')[0]} (Yvo)</h3>
+          <p className="text-blue-600 font-medium text-sm mt-1 mb-3">{aboutData.role_zh}</p>
+          <p className="text-gray-600 text-sm leading-relaxed">{aboutData.bio_zh.substring(0, 115)}...</p>
+        </div>
+      </div>
+
+      {/* CTA Box */}
+      <div className="mt-8 bg-blue-600 text-white rounded-3xl p-8 sm:p-10 text-center shadow-lg relative overflow-hidden">
+        <div className="relative z-10">
+          <h3 className="text-2xl sm:text-3xl font-extrabold mb-4">準備好開啟你的學習旅程了嗎？</h3>
+          <p className="text-blue-100 mb-8 max-w-lg mx-auto">無論是預約客製化課程、留學申請文件輔導，或是教材設計合作，都歡迎隨時與我聯繫，讓我為你的目標提供專業協助。</p>
+          <Link href="/contact" className="inline-flex items-center bg-white text-blue-600 font-bold py-3.5 px-8 rounded-xl hover:bg-gray-50 transition-colors shadow-sm group">
+            立即預約諮詢
+            <ArrowUpRight className="w-5 h-5 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </Link>
+        </div>
+        {/* Decorative backgrounds */}
+        <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-blue-500 rounded-full opacity-50 blur-2xl"></div>
+        <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-blue-700 rounded-full opacity-50 blur-2xl"></div>
+      </div>
 
       {/* Post Navigation */}
       <div className="mt-16 pt-8 border-t border-gray-200 grid grid-cols-1 sm:grid-cols-2 gap-6">
