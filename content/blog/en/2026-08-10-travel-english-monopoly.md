@@ -1,5 +1,5 @@
 ---
-title: [Product Demo] Travel English Monopoly
+title: "[Product Demo] Travel English Monopoly"
 date: 2026-08-10
 excerpt: This is an educational English digital game designed for 5th to 8th graders, blending travel English into traditional Monopoly mechanics. Through special features like "Hero's Blessing," it reduces the pressure of speaking English within a joyful gaming tempo, allowing everyone to enjoy the fun of learning!
 imageUrl: /images/%E6%88%AA%E5%9C%96%202026-08-10%20%E4%B8%8B%E5%8D%883.41.29.png
